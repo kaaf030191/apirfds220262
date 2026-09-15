@@ -1,4 +1,4 @@
-package com.epiis.app.apirfds220262;
+package com.epiis.apirfds220262;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

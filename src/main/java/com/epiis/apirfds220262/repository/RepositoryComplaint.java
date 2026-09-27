@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.epiis.apirfds220262.entity.EntityComplaint;
 
 @Repository
-public interface RepositoryComplaint extends JpaRepository<EntityComplaint, String> {}
+public interface RepositoryComplaint extends JpaRepository<EntityComplaint, String> {
+	EntityComplaint findByCode(String code);
+}

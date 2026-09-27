@@ -39,9 +39,11 @@ public class BusinessSuggestion {
 		
 		EntitySuggestion entitySuggestion = new EntitySuggestion();
 		
+		String codeTemp = GenericHelper.followCodeGeneration();
+		
 		entitySuggestion.setIdSuggestion(UUID.randomUUID().toString());
 		entitySuggestion.setIdOffice(request.getIdOffice());
-		entitySuggestion.setCode(GenericHelper.followCodeGeneration());
+		entitySuggestion.setCode(codeTemp);
 		entitySuggestion.setPersonFullName(request.getPersonFullName().trim());
 		entitySuggestion.setDescription(request.getDescription().trim());
 		entitySuggestion.setStatus(EnumProcess.PENDING.toString());
@@ -76,6 +78,8 @@ public class BusinessSuggestion {
 	        
 	        repositorySuggestionFile.saveAll(listEntitySuggestionFile);
 	    }
+		
+		response.setCode(codeTemp);
 		
 		response.success();
 		response.listMessage.add("Registro realizado correctamente.");

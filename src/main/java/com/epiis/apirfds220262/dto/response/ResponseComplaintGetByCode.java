@@ -7,6 +7,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ResponseSuggestionInsert extends ResponseGeneric {
-	public String code;
+public class ResponseComplaintGetByCode extends ResponseGeneric {
+	public String status;
 }

@@ -12,6 +12,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import com.epiis.apirfds220262.dto.request.RequestComplaintInsert;
+import com.epiis.apirfds220262.dto.response.ResponseComplaintGetByCode;
 import com.epiis.apirfds220262.dto.response.ResponseComplaintInsert;
 import com.epiis.apirfds220262.entity.EntityComplaint;
 import com.epiis.apirfds220262.entity.EntityComplaintFile;
@@ -81,6 +82,20 @@ public class BusinessComplaint {
 		
 		response.success();
 		response.listMessage.add("Registro realizado correctamente.");
+		
+		return response;
+	}
+	
+	public ResponseComplaintGetByCode getByCode(String code) {
+		ResponseComplaintGetByCode response = new ResponseComplaintGetByCode();
+		
+		EntityComplaint entityComplaint = repositoryComplaint.findByCode(code);
+		
+		if(entityComplaint != null) {
+			response.setStatus(entityComplaint.getStatus());
+		}
+		
+		response.success();
 		
 		return response;
 	}

@@ -3,13 +3,16 @@ package com.epiis.apirfds220262.controller;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.epiis.apirfds220262.business.BusinessComplaint;
 import com.epiis.apirfds220262.dto.request.RequestComplaintInsert;
+import com.epiis.apirfds220262.dto.response.ResponseComplaintGetByCode;
 import com.epiis.apirfds220262.dto.response.ResponseComplaintInsert;
 
 import jakarta.validation.Valid;
@@ -46,5 +49,10 @@ public class ComplaintController {
 		} catch(Exception _) {
 			return null;
 		}
+	}
+	
+	@GetMapping(path = "getbycode/{code}")
+	public ResponseEntity<ResponseComplaintGetByCode> actionGetByCode(@PathVariable String code) {
+		return ResponseEntity.ok(businessComplaint.getByCode(code));
 	}
 }

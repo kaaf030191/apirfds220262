@@ -39,10 +39,12 @@ public class BusinessComplaint {
 		
 		EntityComplaint entityComplaint = new EntityComplaint();
 		
+		String codeTemp = GenericHelper.followCodeGeneration();
+		
 		entityComplaint.setIdComplaint(UUID.randomUUID().toString());
 		entityComplaint.setIdOffice(request.getIdOffice());
 		entityComplaint.setIdProfessor(request.getIdProfessor());
-		entityComplaint.setCode(GenericHelper.followCodeGeneration());
+		entityComplaint.setCode(codeTemp);
 		entityComplaint.setComplaintFullName(request.getComplaintFullName().trim());
 		entityComplaint.setPersonFullName(request.getPersonFullName().trim());
 		entityComplaint.setDescription(request.getDescription().trim());
@@ -79,6 +81,8 @@ public class BusinessComplaint {
 	        
 	        repositoryComplaintFile.saveAll(listEntityComplaintFile);
 	    }
+		
+		response.setCode(codeTemp);
 		
 		response.success();
 		response.listMessage.add("Registro realizado correctamente.");

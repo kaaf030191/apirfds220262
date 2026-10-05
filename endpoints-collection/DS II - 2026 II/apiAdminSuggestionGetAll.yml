@@ -1,0 +1,25 @@
+info:
+  name: apiAdminSuggestionGetAll
+  type: http
+  seq: 14
+
+http:
+  method: POST
+  url: "{{urlBase}}/admin/suggestion/getall"
+  headers:
+    - name: Authorization
+      value: Bearer {{token}}
+      disabled: false
+  body:
+    type: multipart-form
+    data:
+      - name: status
+        type: text
+        value: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

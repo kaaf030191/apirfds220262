@@ -13,4 +13,6 @@ import com.epiis.apirfds220262.entity.EntityComplaintComment;
 public interface RepositoryComplaintComment extends JpaRepository<EntityComplaintComment, String> {
 	@Query("select c from EntityComplaintComment c left join fetch c.parentUser where c.idComplaint = :idComplaint order by c.createdAt asc")
 	List<EntityComplaintComment> findListByIdComplaint(@Param("idComplaint") String idComplaint);
+
+	long countByIdComplaint(String idComplaint);
 }

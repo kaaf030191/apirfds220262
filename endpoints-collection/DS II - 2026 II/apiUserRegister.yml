@@ -1,0 +1,30 @@
+info:
+  name: apiUserRegister
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{urlBase}}/user/register"
+  body:
+    type: multipart-form
+    data:
+      - name: firstName
+        type: text
+        value: Ana
+      - name: surName
+        type: text
+        value: Quilla
+      - name: email
+        type: text
+        value: ana.quilla@unamba.edu.pe
+      - name: password
+        type: text
+        value: clave123
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,24 @@
+info:
+  name: apiUserLogin
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{urlBase}}/user/login"
+  body:
+    type: multipart-form
+    data:
+      - name: email
+        type: text
+        value: encargado@unamba.edu.pe
+      - name: password
+        type: text
+        value: Encargado2026*
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

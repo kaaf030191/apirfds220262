@@ -1,0 +1,28 @@
+info:
+  name: apiAdminComplaintUpdateStatus
+  type: http
+  seq: 15
+
+http:
+  method: POST
+  url: "{{urlBase}}/admin/complaint/updatestatus"
+  headers:
+    - name: Authorization
+      value: Bearer {{token}}
+      disabled: false
+  body:
+    type: multipart-form
+    data:
+      - name: idParent
+        type: text
+        value: 1438f3fd-0003-4166-b9c7-01b2d42673ae
+      - name: status
+        type: text
+        value: En coordinación
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -27,8 +27,9 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>25</java.version>
-		<sonar.projectKey>apirfds220262</sonar.projectKey>
+<java.version>25</java.version>
+	    <jjwt.version>0.12.6</jjwt.version>
+	    <sonar.projectKey>apirfds220262</sonar.projectKey>
 	    <sonar.projectName>Sistema de Denuncias y Sugerencias - Backend</sonar.projectName>
 	    
 	    <sonar.exclusions>
@@ -87,6 +88,31 @@
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>2.5.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-api</artifactId>
+			<version>${jjwt.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-impl</artifactId>
+			<version>${jjwt.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-jackson</artifactId>
+			<version>${jjwt.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 
 	</dependencies>

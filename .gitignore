@@ -34,3 +34,4 @@ build/
 
 ### Our ###
 storage/
+sonar_output*.txt
